@@ -11,7 +11,7 @@
   border-bottom: 1px solid gray;
 }
 #body {
-  height: 100%;
+  height: 100vh; /*1vh 윈도루 영역에서 1%를 차지 100vh면 100% 차지*/
   width: 1024px;
   margin: 0 auto; /*자식이 부모를 기준으로 가운데 정렬을 할 때 사용*/
   padding-bottom: 24px;
@@ -95,4 +95,9 @@
 
 .product-avatar {
   width: 24px;
+}
+
+.product-link {
+  color: inherit; /*기본 색상*/
+  text-decoration: none; /*텍스트의 밑줄이 사라짐*/
 }
