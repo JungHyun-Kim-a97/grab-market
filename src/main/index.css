@@ -53,7 +53,6 @@
   display: flex;
   align-items: center;
   font-size: 13px;
-  margin-top: 12px;
 }
 
 .product-avatar {
@@ -63,4 +62,16 @@
 .product-link {
   color: inherit; /*기본 색상*/
   text-decoration: none; /*텍스트의 밑줄이 사라짐*/
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between; /*컨텐츠를 양쪽 끝으로 배치*/
+  align-items: center;
+  margin-top: 12px;
+}
+.product-date {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  margin-top: 1px;
 }
