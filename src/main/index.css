@@ -1,10 +1,10 @@
 #banner {
-  height: 300px;
+  max-height: 300px;
 }
 
 #banner > img {
   width: 100%;
-  height: 300px;
+  max-height: 300px;
 }
 
 #body > h1 {
@@ -25,6 +25,7 @@
   border: 1px solid rgb(230, 230, 230);
   border-radius: 12px; /*모서리를 둥글게*/
   overflow: hidden; /*이미지 짤림을 방지*/
+  position: relative;
 }
 
 .product-img {
@@ -78,4 +79,15 @@
 
 #product-headline {
   margin-top: 8px;
+}
+
+.product-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*상하좌우를 다 0을 주어 부모영역을 모두 차지하게 만든다*/
+  background-color: #ffffffaa;
+  pointer-events: none; /*product-blur가 클릭을 못 하게 막기 때문에 pointer-events를 none으로 설정*/
 }

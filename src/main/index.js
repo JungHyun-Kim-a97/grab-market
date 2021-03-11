@@ -6,7 +6,10 @@ import dayjs from "dayjs"; //날짜를 다루는 js
 import relativeTime from "dayjs/plugin/relativeTime";
 import { API_URL } from "../config/constants.js";
 import { Carousel, message } from "antd"; //Carousel로 슬라이딩 배너 구현
+import "dayjs/locale/ko";
+import ProductCard from "../components/productCard";
 dayjs.extend(relativeTime);
+dayjs.locale("ko");
 
 function MainPage() {
   const [products, setProducts] = React.useState([]);
@@ -51,38 +54,7 @@ function MainPage() {
 
       <div id="product-list">
         {products.map(function (product, index) {
-          return (
-            <div className="product-card">
-              <Link
-                style={{ color: "inherit" }}
-                className="product-link"
-                to={`/products/${product.id}`}
-              >
-                <div>
-                  <img
-                    className="product-img"
-                    src={`${API_URL}/${product.imageUrl}`}
-                  />
-                </div>
-                <div className="product-contents">
-                  <span className="product-name">{product.name}</span>
-                  <span className="product-price">{product.price}원</span>
-                  <div className="product-footer">
-                    <div className="product-seller">
-                      <img
-                        className="product-avatar"
-                        src="images/icons/avatar.png"
-                      />
-                      <span>{product.seller}</span>
-                    </div>
-                    <span className="product-date">
-                      {dayjs(product.createdAt).fromNow()}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          );
+          return <ProductCard product={product} key={index} />;
         })}
       </div>
     </div>
